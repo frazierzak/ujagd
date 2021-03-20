@@ -52,6 +52,7 @@ table {
 html {
 	width: 100%;
 	height: 100%;
+	font-family: 'Roboto Mono', monospace;
 }
 
 body {
@@ -63,16 +64,41 @@ body {
 	align-items: center;
 }
 
+h1 {
+	font-size: 48px;
+	margin-bottom: 20px;
+	font-weight: bold;
+}
+
+.buttons {
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+	max-width: 960px;
+}
+
+.clicker {
+	font-size: 24px;
+	font-weight: bold;
+	cursor: pointer;
+	border-bottom: 2px solid #0000;
+	padding-bottom: 5px;
+}
+
+.clicker:hover {
+	border-bottom-color: #0c0c0c;
+}
+
+
+
 .wrapper {
 	width: 100%;
-	height: 100%;
 	max-width: 960px;
-	max-height: 960px;
-	margin: auto;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	position: relative;
 }
 
 #ujagd {
@@ -82,15 +108,15 @@ body {
 }
 
 #ujagd img {
-	width: 100%;
+	width: 601px;
 	height: auto;
 	padding: 5%;
 }
 
-#ujagd::before {
+#secondhand {
     position: absolute;
     content: '';
-    height: 230px;
+    height: 270px;
     width: 4px;
     background: black;
     top: 50%;
@@ -98,6 +124,14 @@ body {
     border-radius: 5px;
     animation: spin 60s linear infinite;
     transform-origin: top;
+}
+
+#secondhand.start {
+	animation: spin 60s linear infinite;
+}
+
+#secondhand.reset {
+	animation: stop 60s linear infinite;
 }
 
 @keyframes spin {
