@@ -9,9 +9,12 @@
 </head>
 <body>
 	<h1>U-Jagd Uhr</h1>
+	<h2>The Submarine Hunter's Watch</h2>
+	<p>Used for estimating target boat's speed in knots/s</p>
 	<div class="buttons">
-		<div id="start" class="clicker" onclick="document.getElementById('secondhand').classList.remove('reset');">Start / Stop</div>
-		<div id="reset" class="clicker" onclick="document.getElementById('secondhand').classList.toggle('reset');">Reset</div>
+		<div id="start" class="clicker">Start</div>
+		<div id="stop" class="clicker">Stop</div>
+		<div id="reset" class="clicker">Reset</div>
 	</div>
 	<div class="wrapper">
 
@@ -20,6 +23,16 @@
 			<div id="secondhand" data-animation></div>
 		</div>
 	</div>
+	<h2>Instructions</h2>
+	<ol>
+		<li>Bring your U-Boat to a complete stop.</li>
+		<li>Put the vertical center line of the periscope in front of your target.</li>
+		<li>Start the U-Jagd Uhr the instant your target reaches the line.</li>
+		<li>Keep your periscope completely still until the boat passes.</li>
+		<li>Stop the U-Jagd Uhr the instant the boat finishes crossing your line.</li>
+		<li>Find the boat's length with recognition manual and match it with the length ring on the U-Jagd Uhr.</li>
+		<li>You now know your target's estimated speed in kts.</li>
+	</ol>
 	<script type="text/javascript" src="main.js"></script>
 </body>
 </html>
