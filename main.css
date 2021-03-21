@@ -62,12 +62,16 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	padding: 20px;
+	background: #fff;
 }
 
 h1 {
 	font-size: 36px;
 	margin-bottom: 10px;
 	font-weight: bold;
+	text-align: center;
+
 }
 
 h2 {
@@ -83,6 +87,7 @@ p {
 
 ol {
 	list-style: decimal;
+	padding: 0 0 0 30px;
 }
 
 li {
