@@ -22,13 +22,21 @@ const reset = document.getElementById('reset');
 const secondhand = document.getElementById('secondhand');
 
 start.addEventListener('click', () => {
-  secondhand.className = '';
-  secondhand.classList.add('start');
+  if(secondhand.classList.contains("stop")) {
+  	secondhand.className = '';
+  	secondhand.classList.add('start');
+  	start.innerHTML = "Stop";
+  } else {
+  	secondhand.className = '';
+  	secondhand.classList.add('stop');
+  	start.innerHTML = "Start";
+  }
 })
 
 stop.addEventListener('click', () => {
   secondhand.className = '';
   secondhand.classList.add('stop');
+  document.getElementById("content").innerHTML = "Start";
 })
 
 reset.addEventListener('click', () => {
