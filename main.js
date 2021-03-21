@@ -17,7 +17,6 @@
 //   }, false);
 
 const start = document.getElementById('start');
-const stop = document.getElementById('stop');
 const reset = document.getElementById('reset');
 const secondhand = document.getElementById('secondhand');
 
@@ -27,21 +26,19 @@ start.addEventListener('click', () => {
   	secondhand.classList.add('start');
   	start.innerHTML = "Stop";
   } else {
+  	if(secondhand.classList.contains(""))
   	secondhand.className = '';
   	secondhand.classList.add('stop');
   	start.innerHTML = "Start";
   }
 })
 
-stop.addEventListener('click', () => {
-  secondhand.className = '';
-  secondhand.classList.add('stop');
-  document.getElementById("content").innerHTML = "Start";
-})
-
 reset.addEventListener('click', () => {
+  secondhand.className = '';
   secondhand.classList.add('reset');
+  secondhand.classList.add('stop');
   secondhand.style.animation = 'none';
   secondhand.offsetHeight; /* trigger reflow */
   secondhand.style.animation = null; 
+  start.innerHTML = "Start";
 })
