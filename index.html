@@ -7,13 +7,9 @@
 	<link rel="stylesheet" type="text/css" href="main.css">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 <body>
-	<div class="container">
-	  <label class="switch"><input id="day_night" type="checkbox" /><div></div>
-	  </label>
-	</div>
-
 	<h1>U-Jagd Uhr</h1>
 	<h2>The Submarine Hunter's Watch</h2>
 	<p>Used for estimating target boat's speed in knots/s</p>
@@ -27,18 +23,21 @@
 		</div>
 	</div>
 	<div class="buttons">
-		<div id="start" class="clicker">Start</div>
+		<div id="start" class="clicker night">Start</div>
 		<!-- <div id="stop" class="clicker">Stop</div> -->
-		<div id="reset" class="clicker">Reset</div>
+		<div id="reset" class="clicker night">Reset</div>
+	</div>
+	<div class="buttons">
+		<div id="day_night_toggle" class="clicker night" style="width: 100%">Day Mode</div>
 	</div>
 	<h2>Instructions</h2>
 	<ol>
-		<li>Bring your U-Boat to a complete stop.</li>
+		<li>Bring your sub to a complete stop.</li>
 		<li>Put the vertical center line of the periscope in front of your target.</li>
 		<li>Start the U-Jagd Uhr the instant your target reaches the line.</li>
 		<li>Keep your periscope completely still until the boat passes.</li>
 		<li>Stop the U-Jagd Uhr the instant the boat finishes crossing your line.</li>
-		<li>Find the boat's length with recognition manual and match it with the length ring on the U-Jagd Uhr.</li>
+		<li>Find the boat's length with the recognition manual and match it with the length ring on the U-Jagd Uhr.</li>
 		<li>You now know your target's estimated speed in kts.</li>
 	</ol>
 	<h2>Changelog</h2>
@@ -47,7 +46,7 @@
 		<li><strong>3/21/21</strong> - Hi-Res Watch, New buttons, instructions, layout</li>
 		<li><strong>3/22/21</strong> - Brand new (more detailed and easier to read) stop watch. Night mode test.</li>
 	</ul>
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	
 	<script type="text/javascript" src="main.js"></script>
 </body>
 </html>

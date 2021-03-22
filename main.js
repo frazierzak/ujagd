@@ -1,25 +1,6 @@
-// /* Toggle Animations */
-// const jstoggle = document.getElementById('start');
-// jstoggle.addEventListener('click', () => {
-//   const animations = document.querySelectorAll('[data-animation');
-//   animations.forEach(animation => {
-//     const running = animation.style.animationPlayState || 'running';
-//     animation.style.animationPlayState = running === 'running' ? 'paused' : 'running';
-//   })
-// });
-
-// const jsreset = document.getElementById('reset');
-// const secondhand = document.getElementById('secondhand');
-// jsreset.addEventListener('click', () => {
-//   secondhand.classList.add("reset");
-//   void secondhand.offsetWidth;
-//   secondhand.classList.remove("reset");
-//   }, false);
-
 const start = document.getElementById('start');
 const reset = document.getElementById('reset');
 const secondhand = document.getElementById('secondhand');
-const toggle = document.getElementById('day_night');
 
 start.addEventListener('click', () => {
   if(secondhand.classList.contains("stop")) {
@@ -44,33 +25,37 @@ reset.addEventListener('click', () => {
   start.innerHTML = "Start";
 })
 
-toggle.addEventListener('input', () => {
-	if(toggle.checked) {
+const toggle = document.getElementById('day_night_toggle');
+var day_mode = false;
+
+toggle.addEventListener('click', () => {
+	if(day_mode) {
   		$("body").css({
   			"background": "#0c0c0c",
   			"color": "#ffffff"
   		})
+  		$("#day_night_toggle").text("Day Mode");
   		$(secondhand).css({
-  			"background": "#bfbfbf"
+  			"background": "#fff"
   		})
   		$(".clicker").addClass("night");
-  		$( ".light" ).fadeOut( "25", function() {
-    		$( ".dark" ).fadeIn( "5", function() {
-    		// Animation complete
-  			});
+  		$( ".light" ).fadeOut("25", function() {
+    		$( ".dark" ).fadeIn("5");
   		});
+  		day_mode = false;
 	} else {
 		$("body").css({
   			"background": "#ffffff",
   			"color": "#0c0c0c"
   		})
+  		$("#day_night_toggle").text("Night Mode");
   		$(secondhand).css({
   			"background": "#0c0c0c"
   		})
+  		$(".clicker").removeClass("night");
   		$( ".dark" ).fadeOut( "25", function() {
-    		$( ".light" ).fadeIn( "5", function() {
-    		// Animation complete
-  			});
+    		$( ".light" ).fadeIn("5");
   		});
+  		day_mode = true;
 	}
 })
