@@ -53,6 +53,7 @@ toggle.addEventListener('input', () => {
   		$(secondhand).css({
   			"background": "#bfbfbf"
   		})
+  		$(".clicker").addClass("night");
   		$( ".light" ).fadeOut( "25", function() {
     		$( ".dark" ).fadeIn( "5", function() {
     		// Animation complete
