@@ -19,6 +19,7 @@
 const start = document.getElementById('start');
 const reset = document.getElementById('reset');
 const secondhand = document.getElementById('secondhand');
+const toggle = document.getElementById('day_night');
 
 start.addEventListener('click', () => {
   if(secondhand.classList.contains("stop")) {
@@ -41,4 +42,34 @@ reset.addEventListener('click', () => {
   secondhand.offsetHeight; /* trigger reflow */
   secondhand.style.animation = null; 
   start.innerHTML = "Start";
+})
+
+toggle.addEventListener('input', () => {
+	if(toggle.checked) {
+  		$("body").css({
+  			"background": "#0c0c0c",
+  			"color": "#ffffff"
+  		})
+  		$(secondhand).css({
+  			"background": "#bfbfbf"
+  		})
+  		$( ".light" ).fadeOut( "25", function() {
+    		$( ".dark" ).fadeIn( "5", function() {
+    		// Animation complete
+  			});
+  		});
+	} else {
+		$("body").css({
+  			"background": "#ffffff",
+  			"color": "#0c0c0c"
+  		})
+  		$(secondhand).css({
+  			"background": "#0c0c0c"
+  		})
+  		$( ".dark" ).fadeOut( "25", function() {
+    		$( ".light" ).fadeIn( "5", function() {
+    		// Animation complete
+  			});
+  		});
+	}
 })

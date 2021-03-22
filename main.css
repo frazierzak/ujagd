@@ -61,6 +61,7 @@ body {
 	align-items: center;
 	padding: 10px;
 	background: #fff;
+	transition: background 350ms ease-in;
 }
 
 h1 {
@@ -86,6 +87,10 @@ p {
 
 ol {
 	list-style: decimal;
+	padding: 0 0 0 30px;
+}
+
+ul {
 	padding: 0 0 0 30px;
 }
 
@@ -136,10 +141,11 @@ li {
 	justify-content: center;
 	align-items: center;
 	width: 100%;
+	position: relative;
 }
 
 #ujagd img {
-	/*max-width: 601px;*/
+	max-width: 960px;
 	width: 100%;
 	height: auto;
 	padding: 0;
@@ -148,20 +154,21 @@ li {
 #secondhand {
     position: absolute;
     content: '';
-    height: 40%;
-    width: 4px;
-    background: black;
+    height: 44%;
+    width: 6px;
+    background: #0c0c0c;
     top: 50%;
-    left: calc(50% - 2px);
+    left: calc(50% - 3px);
     border-radius: 5px;
-    animation: spin 60s linear infinite;
+    animation: spin 100s linear infinite;
     transform-origin: top;
     animation-play-state: paused;
+    transition: background 150ms ease-in;
 }
 
 #secondhand.start {
 	animation-play-state: start;
-	animation: spin 60s linear infinite;
+	animation: spin 100s linear infinite;
 }
 
 #secondhand.stop {
@@ -180,4 +187,42 @@ li {
     100% {
         transform: rotate(180deg)
     }
+}
+
+.switch input {
+  position: absolute;
+  opacity: 0;
+}
+
+.switch {
+  display: inline-block;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 25px;
+  height: 1em;
+  width: 2em;
+  background: #BDB9A6;
+  border-radius: 1em;
+}
+
+.switch div {
+  height: 1em;
+  width: 1em;
+  border-radius: 1em;
+  background: #FFF;
+  box-shadow: 0 0.1em 0.3em rgba(0,0,0,0.3);
+  -webkit-transition: all 300ms;
+     -moz-transition: all 300ms;
+          transition: all 300ms;
+}
+
+.switch input:checked + div {
+  -webkit-transform: translate3d(100%, 0, 0);
+     -moz-transform: translate3d(100%, 0, 0);
+          transform: translate3d(100%, 0, 0);
+}
+
+.dark {
+	display: none;
 }
