@@ -1,3 +1,10 @@
+function ship_speed(sl, t) {
+  var slt = sl / t;
+  var spe = slt * 1.94;
+  var rounded = Math.round(spe * 10) / 10;
+  return rounded;
+}
+
 const start = document.getElementById('start');
 const reset = document.getElementById('reset');
 const secondhand = document.getElementById('secondhand');
